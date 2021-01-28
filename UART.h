@@ -18,6 +18,11 @@
 #define HIGH_SPEED          1
 #define LOW_SPEED           0
 
+#define PORT_A       1
+#define PORT_B       2
+#define PORT_C       3
+
+
 /******************************************************************************
  * 						APIs supported by this driver
  *****************************************************************************/
