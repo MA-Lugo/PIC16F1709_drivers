@@ -263,8 +263,21 @@ void UART_InitPin_Rx(uint8_t PORT_x, uint8_t PinNumber)
     
 }
 
+/******************************************************************************
+ * @fn				- UART_WriteChar
+ * @brief			- This function send a byte or one byte of data
+ *
+ * @param[in]		- character or data
+ *
+ * @return			- none
+ *
+ * @note			- none
+ *****************************************************************************/
+
 void UART_WriteChar(uint8_t data)
-{     
+{
+    while(!TX1STAbits.TRMT); //Transmit Shift Register Status bit 1:EMPTY
+    TXREG = data;     
    
 }
 
