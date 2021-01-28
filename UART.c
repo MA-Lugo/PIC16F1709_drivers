@@ -281,8 +281,22 @@ void UART_WriteChar(uint8_t data)
    
 }
 
+/******************************************************************************
+ * @fn				- UART_WriteString
+ * @brief			- This function send a string
+ *
+ * @param[in]		- pointer of one string
+ *
+ * @return			- none
+ *
+ * @note			- none
+ *****************************************************************************/
 void UART_WriteString(uint8_t *pText)
 {
+    for(uint8_t i=0 ; pText[i]!='\0' ; i++)
+    {
+        UART_WriteChar(pText[i]);
+    }
     
 }
 
