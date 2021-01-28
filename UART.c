@@ -300,10 +300,22 @@ void UART_WriteString(uint8_t *pText)
     
 }
 
+/******************************************************************************
+ * @fn				- UART_Read
+ * @brief			- This function read the UART port
+ *
+ *
+ * @return			- a byte or char
+ *
+ * @note			- none
+ *****************************************************************************/
+
 uint8_t UART_Read(void)
 {
-    
+    while(!RCIF); // Wait Untill a Data Frame is Received
+    return RCREG;
 }
+
 
 void UART_EnableInterrupts(uint8_t RxOrTx)
 {
