@@ -317,8 +317,31 @@ uint8_t UART_Read(void)
 }
 
 
+/******************************************************************************
+ * @fn				- UART_EnableInterrupts
+ * @brief			- This function enables the given interrupt type
+ *
+ * @param[in]		- Interrupt type : RX or TX
+ *
+ * @return			- none
+ *
+ * @note			- none
+ *****************************************************************************/
+
 void UART_EnableInterrupts(uint8_t RxOrTx)
 {
+    INTCONbits.GIE = 1;     
+    INTCONbits.PEIE = 1;    
+    
+    if (RxOrTx == RX)
+    {
+        PIE1bits.RCIE = 1;
+    }
+    else if (RxOrTx == TX)
+    {
+        PIE1bits.TXIE = 1;
+    }
 
 }
+
 

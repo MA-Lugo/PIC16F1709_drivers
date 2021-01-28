@@ -22,6 +22,8 @@
 #define PORT_B       2
 #define PORT_C       3
 
+#define RX          1
+#define TX          2
 
 /******************************************************************************
  * 						APIs supported by this driver
