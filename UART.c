@@ -39,6 +39,9 @@ void UART_setup(uint8_t BRGH16_EnOrDis,uint8_t HighOrLow_Speed, uint16_t SPBRG_v
     
 }
 
+
+
+
 /******************************************************************************
  * @fn				- UART_InitPin_Tx
  * @brief			- This function initialize the Tx Pin
@@ -147,8 +150,116 @@ void UART_InitPin_Tx(uint8_t PORT_x, uint8_t PinNumber)
     
 }
 
+/******************************************************************************
+ * @fn				- UART_InitPin_Rx
+ * @brief			- This function initialize the Rx Pin
+ *
+ * @param[in]		- PORT_A, PORT_B OR PORT_C macros
+ * @param[in]		- Pin Number
+ *
+ * @return			- none
+ *
+ * @note			- none
+ *****************************************************************************/
+
 void UART_InitPin_Rx(uint8_t PORT_x, uint8_t PinNumber)
 {
+    if (PORT_x == PORT_A)
+    {
+        ANSELA &= ~(1 << PinNumber);
+        WPUA   &= ~(1 << PinNumber);
+        TRISA  |=  (1 << PinNumber);
+        
+        if (PinNumber == 0)
+        {
+            RXPPS = 0x00;
+        }
+        else if (PinNumber == 1)
+        {
+            RXPPS = 0x01;
+        }
+        else if (PinNumber == 2)
+        {
+            RXPPS = 0x02;
+        }
+        else if (PinNumber == 3)
+        {
+            RXPPS = 0x03;
+        }
+        else if (PinNumber == 4)
+        {
+            RXPPS = 0x04;
+        }
+        else if (PinNumber == 5)
+        {
+            RXPPS = 0x05;
+        }
+    }
+    else if (PORT_x == PORT_B)
+    {
+        ANSELB &= ~(1 << PinNumber);
+        WPUB   &= ~(1 << PinNumber);
+        TRISB  |=  (1 << PinNumber);   
+        
+        if (PinNumber == 4)
+        {
+            RXPPS = 0b01100;
+        }
+        else if (PinNumber == 5)
+        {
+            RXPPS = 0b01101;
+        }
+        else if (PinNumber == 6)
+        {
+            RXPPS = 0b01110;
+        }
+        else if (PinNumber == 7)
+        {
+            RXPPS = 0b01111;
+        }
+        
+        
+    }
+    
+    else if (PORT_x == PORT_C)
+    {
+        ANSELC &= ~(1 << PinNumber);
+        WPUC   &= ~(1 << PinNumber);
+        TRISC  |=  (1 << PinNumber);
+        
+        if (PinNumber == 0)
+        {
+            RXPPS = 0b10000;
+        }
+        else if (PinNumber == 1)
+        {
+            RXPPS = 0b10001;
+        }
+        else if (PinNumber == 2)
+        {
+            RXPPS = 0b10010;
+        }
+        else if (PinNumber == 3)
+        {
+            RXPPS = 0b10011;
+        }
+        else if (PinNumber == 4)
+        {
+            RXPPS = 0b10100;
+        }
+        else if (PinNumber == 5)
+        {
+            RXPPS = 0b10101;
+        }
+        else if (PinNumber == 6)
+        {
+            RXPPS = 0b10110;
+        }
+        else if (PinNumber == 7)
+        {
+            RXPPS = 0b10111;
+        }
+    }
     
 }
 
