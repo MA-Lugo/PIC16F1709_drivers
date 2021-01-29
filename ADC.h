@@ -51,3 +51,5 @@ void ADC_setup(uint8_t ADC_CLK,uint8_t ADC_PVREF,uint8_t ADC_NVREF);
 void ADC_Format(uint8_t ADC_FORMAT);
 
 void ADC_Init_CH(uint8_t ADC_CH);
+
+uint16_t ADC_Read(uint8_t ADC_CH);
