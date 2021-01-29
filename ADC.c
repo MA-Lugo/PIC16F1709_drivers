@@ -6,7 +6,19 @@
 
 #include "ADC.h"
 
-
+/******************************************************************************
+ * @fn				- ADC_setup
+ * @brief			- This function configure the ADC peripheral
+ *                    
+ *
+ * @param[in]		- ADC_CLK macros
+ * @param[in]		- ADC_PVREF macros
+ * @param[in]		- ADC_NVREF macros
+ *
+ * @return			- none
+ *
+ * @note			- check TAD parameter for don't viloate it with ADC_CLK
+ *****************************************************************************/
 void ADC_setup(uint8_t ADC_CLK,uint8_t ADC_PVREF,uint8_t ADC_NVREF)
 {
     ADCON1bits.ADCS = ADC_CLK;
@@ -15,6 +27,19 @@ void ADC_setup(uint8_t ADC_CLK,uint8_t ADC_PVREF,uint8_t ADC_NVREF)
 }
 
 
+
+/******************************************************************************
+ * @fn				- ADC_Format
+ * @brief			- This function configure the fustified format of the 
+ *                    result
+ *                    
+ *
+ * @param[in]		- ADC_FORMAT_LEFT or ADC_FORMAT_RIGHT
+ *
+ * @return			- none
+ *
+ * @note			- none
+ *****************************************************************************/
 void ADC_Format(uint8_t ADC_FORMAT)
 {
     ADCON1bits.ADFM = ADC_FORMAT;
@@ -87,6 +112,20 @@ void ADC_Init_CH(uint8_t ADC_CH)
     }
 }
 
+
+
+/******************************************************************************
+ * @fn				- ADC_Read
+ * @brief			- This function read the given channel
+ *                    
+ *                    
+ *
+ * @param[in]		- ADC_CH macros
+ *
+ * @return			- reading value
+ *
+ * @note			- none
+ *****************************************************************************/
 uint16_t ADC_Read(uint8_t ADC_CH)
 {
     uint16_t value;
