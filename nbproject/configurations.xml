@@ -7,6 +7,7 @@
       <itemPath>003UART_RxInterrupt_example.c</itemPath>
       <itemPath>004ADC_example.c</itemPath>
       <itemPath>005TMR0_INT_example.c</itemPath>
+      <itemPath>006DATA_AQC_example.c</itemPath>
     </logicalFolder>
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
@@ -98,8 +99,26 @@
         </XC8-config-global>
       </item>
       <item path="003UART_RxInterrupt_example.c" ex="true" overriding="false">
+        <HI-TECH-COMP>
+        </HI-TECH-COMP>
+        <HI-TECH-LINK>
+        </HI-TECH-LINK>
+        <XC8-CO>
+        </XC8-CO>
+        <XC8-config-global>
+        </XC8-config-global>
       </item>
       <item path="004ADC_example.c" ex="true" overriding="false">
+        <HI-TECH-COMP>
+        </HI-TECH-COMP>
+        <HI-TECH-LINK>
+        </HI-TECH-LINK>
+        <XC8-CO>
+        </XC8-CO>
+        <XC8-config-global>
+        </XC8-config-global>
+      </item>
+      <item path="005TMR0_INT_example.c" ex="true" overriding="false">
       </item>
       <HI-TECH-COMP>
         <property key="additional-warnings" value="true"/>

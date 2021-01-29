@@ -128,14 +128,13 @@ void ADC_Init_CH(uint8_t ADC_CH)
  *****************************************************************************/
 uint16_t ADC_Read(uint8_t ADC_CH)
 {
-    uint16_t value;
+   
     ADCON0bits.CHS = ADC_CH;
     ADCON0bits.ADON = 1;
     ADCON0bits.GO_nDONE = 1;
     while(ADCON0bits.GO_nDONE);
     ADCON0bits.ADON = 0;
     
-    value = ADRES;
     
-    return value;
+    return ADRES;
 }
