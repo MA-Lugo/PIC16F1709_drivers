@@ -5,6 +5,7 @@
       <itemPath>001_UART_Tx_RX_example.c</itemPath>
       <itemPath>002UART_stringTx_example.c</itemPath>
       <itemPath>003UART_RxInterrupt_example.c</itemPath>
+      <itemPath>004ADC_example.c</itemPath>
     </logicalFolder>
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
@@ -38,7 +39,7 @@
         <targetDevice>PIC16F1709</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>noID</platformTool>
+        <platformTool>PICkit3PlatformTool</platformTool>
         <languageToolchain>XC8</languageToolchain>
         <languageToolchainVersion>2.31</languageToolchainVersion>
         <platform>3</platform>
@@ -235,7 +236,7 @@
         <property key="user-pack-device-support" value=""/>
         <property key="wpo-lto" value="false"/>
       </XC8-config-global>
-      <item path="main.c" ex="false" overriding="false">
+      <item path="main.c" ex="true" overriding="false">
         <HI-TECH-COMP>
         </HI-TECH-COMP>
         <HI-TECH-LINK>
